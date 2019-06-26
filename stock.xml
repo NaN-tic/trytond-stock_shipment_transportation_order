@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- views -->
+        <record model="ir.ui.view" id="transportation_order_view_form">
+            <field name="model">stock.transportation_order</field>
+            <field name="type">form</field>
+            <field name="name">transportation_order_form</field>
+        </record>
+        <record model="ir.ui.view" id="transportation_order_view_tree">
+            <field name="model">stock.transportation_order</field>
+            <field name="type">tree</field>
+            <field name="name">transportation_order_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_transportation_order">
+            <field name="name">Transportation Orders</field>
+            <field name="res_model">stock.transportation_order</field>
+            <field name="search_value"></field>
+        </record>
+
+        <record model="ir.action.act_window.view"
+          id="act_transportation_order_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="transportation_order_view_tree"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+        <record model="ir.action.act_window.view"
+          id="act_transportation_order_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="transportation_order_view_form"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+
+        <record model="ir.action.act_window.domain"
+                id="act_transportation_order_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+        <record model="ir.action.act_window.domain"
+                id="act_transportation_order_domain_confirmed">
+            <field name="name">Done</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'done')]"
+                pyson="1"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+        <record model="ir.action.act_window.domain"
+                id="act_transportation_order_domain_all">
+            <field name="name">All</field>
+            <field name="sequence" eval="9999"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+
+        <!-- menu -->
+        <menuitem parent="stock.menu_stock" sequence="99" id="menu_transportation_order"
+            action="act_transportation_order"/>
+
+        <record model="ir.ui.menu-res.group"
+            id="menu_transportation_order_group_stock">
+            <field name="menu" ref="menu_transportation_order"/>
+            <field name="group" ref="stock.group_stock"/>
+        </record>
+
+        <!-- transportation_order.report -->
+        <record model="ir.action.report" id="transportation_order_report_action">
+            <field name="name">Transportation Order</field>
+            <field name="model">stock.transportation_order</field>
+            <field name="report_name">stock.transportation_order.jreport</field>
+            <field name="report">stock_shipment_transportation_order/transportation_order.jrxml</field>
+            <field name="extension">pdf</field>
+            <field name="template_extension">jrxml</field>
+        </record>
+        <record model="ir.action.keyword" id="report_transportation_order_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">stock.transportation_order,-1</field>
+            <field name="action" ref="transportation_order_report_action"/>
+        </record>
+
+        <record model="ir.model.access" id="access_transportation_order">
+            <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_transportation_order_group_stock">
+            <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+            <field name="group" ref="stock.group_stock"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access"
+              id="access_transportation_order_group_stock_admin">
+          <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+          <field name="group" ref="stock.group_stock_admin"/>
+          <field name="perm_read" eval="True"/>
+          <field name="perm_write" eval="True"/>
+          <field name="perm_create" eval="True"/>
+          <field name="perm_delete" eval="True"/>
+      </record>
+    </data>
+</tryton>

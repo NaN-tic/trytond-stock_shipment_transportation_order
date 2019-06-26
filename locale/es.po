@@ -1,0 +1,170 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:stock.configuration,transportation_order_sequence:"
+msgid "Transportation Order Sequence"
+msgstr "Secuencia orden de transporte"
+
+msgctxt "field:stock.configuration.sequence,transportation_order_sequence:"
+msgid "Transportation Order Sequence"
+msgstr "Secuencia orden de transporte"
+
+msgctxt "field:stock.shipment.out,transportation_order:"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
+
+msgctxt "field:stock.transportation_order,carrier:"
+msgid "Carrier"
+msgstr "Transportista"
+
+msgctxt "field:stock.transportation_order,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:stock.transportation_order,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:stock.transportation_order,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:stock.transportation_order,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:stock.transportation_order,incoterm:"
+msgid "Incoterm"
+msgstr "Incoterm"
+
+msgctxt "field:stock.transportation_order,number:"
+msgid "Number"
+msgstr "Número"
+
+msgctxt "field:stock.transportation_order,order_date:"
+msgid "Date"
+msgstr "Fecha"
+
+msgctxt "field:stock.transportation_order,rec_name:"
+msgid "Record Name"
+msgstr "Nombre del registro"
+
+msgctxt "field:stock.transportation_order,shipments_out:"
+msgid "Customer Shipments"
+msgstr "Albaranes de cliente"
+
+msgctxt "field:stock.transportation_order,state:"
+msgid "State"
+msgstr "Estado"
+
+msgctxt "field:stock.transportation_order,total_packages:"
+msgid "Total of Packages"
+msgstr "Total de paquetes"
+
+msgctxt "field:stock.transportation_order,total_weight:"
+msgid "Total Weight"
+msgstr "Peso total"
+
+msgctxt "field:stock.transportation_order,write_date:"
+msgid "Write Date"
+msgstr "Usuario de creación"
+
+msgctxt "field:stock.transportation_order,write_uid:"
+msgid "Write User"
+msgstr "Usuario de modificación"
+
+msgctxt "help:stock.configuration,transportation_order_sequence:"
+msgid "Used to generate the number given to transportation orders."
+msgstr "Se utiliza para generar el número dado a las órdenes de transporte."
+
+msgctxt "model:ir.action,name:act_transportation_order"
+msgid "Transportation Orders"
+msgstr "Ordenes de transporte"
+
+msgctxt "model:ir.action,name:transportation_order_report_action"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_transportation_order_domain_all"
+msgid "All"
+msgstr "Todos"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_transportation_order_domain_confirmed"
+msgid "Done"
+msgstr "Realizado"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_transportation_order_domain_draft"
+msgid "Draft"
+msgstr "Borrador"
+
+msgctxt "model:ir.sequence,name:sequence_transportation_order"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
+
+msgctxt "model:ir.sequence.type,name:sequence_type_transportation_order"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
+
+msgctxt "model:ir.ui.menu,name:menu_transportation_order"
+msgid "Transportation Orders"
+msgstr "Ordenes de transporte"
+
+msgctxt "model:stock.transportation_order,name:"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "CARRIER"
+msgstr "TRANSPORTISTA"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Customer Code"
+msgstr "Cód. cliente"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Customer and Address"
+msgstr "Cliente y Dirección"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "DATE"
+msgstr "FECHA"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Nº"
+msgstr "Nº"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Packages"
+msgstr "Paquetes"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "SHIPPING CONDITIONS"
+msgstr "CONDICIONES ENVÍO"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "TRANSPORTATION ORDER"
+msgstr "ORDEN DE TRANSPORTE"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Total"
+msgstr "Total"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Weight"
+msgstr "Peso"
+
+msgctxt "selection:stock.transportation_order,state:"
+msgid "Done"
+msgstr "Realizado"
+
+msgctxt "selection:stock.transportation_order,state:"
+msgid "Draft"
+msgstr "Borrador"
+
+msgctxt "view:stock.configuration:"
+msgid "Transportation Order"
+msgstr "Orden de transporte"
