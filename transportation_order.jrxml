@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="production" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
 	<property name="TRYTON_RELATIONS" value="[&apos;shipments_out&apos;]"/>
-	<property name="ireport.zoom" value="1.9487171000000023"/>
-	<property name="ireport.x" value="28"/>
+	<property name="ireport.zoom" value="1.210000000000001"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="defecto" isDefault="true" forecolor="#000000" backcolor="#FFFFFF" fill="Solid" vAlign="Middle" markup="none" pattern="" isBlankWhenNull="true" fontName="SansSerif" fontSize="10" isPdfEmbedded="false"/>
 	<style name="textoscabecera" style="defecto" forecolor="#000000" backcolor="#CCFFCC" radius="10" fontName="SansSerif" isBold="true" isPdfEmbedded="false">
@@ -63,7 +63,7 @@
 	<field name="line_customer_address" class="java.lang.String">
 		<fieldDescription><![CDATA[shipments_out/customer/addresses/full_address_lang]]></fieldDescription>
 	</field>
-	<field name="line_weight" class="java.lang.Number">
+	<field name="weight_lines" class="java.lang.Number">
 		<fieldDescription><![CDATA[shipments_out/weight_lines]]></fieldDescription>
 	</field>
 	<field name="line_packages" class="java.lang.Integer">
@@ -84,9 +84,6 @@
 	<field name="carrier" class="java.lang.String">
 		<fieldDescription><![CDATA[carrier/party/name]]></fieldDescription>
 	</field>
-	<field name="total_weight" class="java.lang.Number">
-		<fieldDescription><![CDATA[total_weight]]></fieldDescription>
-	</field>
 	<field name="total_packages" class="java.lang.Integer">
 		<fieldDescription><![CDATA[total_packages]]></fieldDescription>
 	</field>
@@ -95,6 +92,9 @@
 	</field>
 	<field name="order_date" class="java.util.Date">
 		<fieldDescription><![CDATA[order_date]]></fieldDescription>
+	</field>
+	<field name="weight" class="java.lang.Number">
+		<fieldDescription><![CDATA[shipments_out/weight]]></fieldDescription>
 	</field>
 	<sortField name="id"/>
 	<variable name="L" class="java.util.Locale" resetType="Group" resetGroup="order">
@@ -111,6 +111,17 @@
 	<variable name="date" class="java.util.Date" resetType="Group" resetGroup="order">
 		<variableExpression><![CDATA[$F{effective_date} == null ? $F{planned_date} : $F{effective_date}]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{effective_date} == null ? $F{planned_date} : $F{effective_date}]]></initialValueExpression>
+	</variable>
+	<variable name="total_weight" class="java.lang.Number" calculation="Sum">
+		<variableExpression><![CDATA[$F{weight} != null && $F{weight} != "" && $F{weight} != 0
+?
+   $F{weight}
+:
+    $F{weight_lines} != null && $F{weight_lines} != ""
+    ?
+        $F{weight_lines}
+    :
+        "0.00"]]></variableExpression>
 	</variable>
 	<group name="order" isResetPageNumber="true" isReprintHeaderOnEachPage="true" footerPosition="StackAtBottom">
 		<groupExpression><![CDATA[$F{id}]]></groupExpression>
@@ -242,12 +253,12 @@
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Total")]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" pattern="#,##0.0000;-#,##0.0000">
 					<reportElement style="line_name" positionType="FixRelativeToBottom" mode="Transparent" x="487" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="68e55f8a-1053-486a-b908-a8ba7d75f44f"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{total_weight}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{total_weight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement style="line_name" positionType="FixRelativeToBottom" mode="Opaque" x="425" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="46503432-f404-47c7-bb0e-d9e29c898dc7"/>
@@ -285,7 +296,7 @@
 				<textFieldExpression><![CDATA["" +$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="9" y="6" width="140" height="60" isRemoveLineWhenBlank="true" uuid="fd95a5eb-9907-433e-bbfb-b5b5ff239b98">
+				<reportElement x="0" y="0" width="162" height="69" isRemoveLineWhenBlank="true" uuid="fd95a5eb-9907-433e-bbfb-b5b5ff239b98">
 					<printWhenExpression><![CDATA[$F{logo}.length()>0]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$F{logo}]]></imageExpression>
@@ -294,12 +305,20 @@
 	</pageHeader>
 	<detail>
 		<band height="22">
-			<textField isBlankWhenNull="false">
+			<textField pattern="#,##0.0000;-#,##0.0000" isBlankWhenNull="false">
 				<reportElement x="490" y="3" width="47" height="15" uuid="c11b6243-7aec-4fe4-9eba-6c9303dec9cd"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{line_weight}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{weight} != null && $F{weight} != "" && $F{weight} != 0
+?
+   $F{weight}
+:
+    $F{weight_lines} != null && $F{weight_lines} != ""
+    ?
+        $F{weight_lines}
+    :
+        "0.00"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="line_name" x="3" y="3" width="84" height="15" uuid="b090b6d9-64bd-4c68-a29b-fc14819ee688"/>
