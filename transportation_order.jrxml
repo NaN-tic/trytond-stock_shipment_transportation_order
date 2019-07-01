@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 5.5.2  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="production" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
 	<property name="TRYTON_RELATIONS" value="[&apos;shipments_out&apos;]"/>
 	<property name="ireport.zoom" value="1.9487171000000023"/>
@@ -79,7 +78,7 @@
 	<field name="reference" class="java.lang.String">
 		<fieldDescription><![CDATA[reference]]></fieldDescription>
 	</field>
-	<field name="line_number" class="java.lang.Integer">
+	<field name="line_number" class="java.lang.String">
 		<fieldDescription><![CDATA[shipments_out/number]]></fieldDescription>
 	</field>
 	<field name="carrier" class="java.lang.String">
