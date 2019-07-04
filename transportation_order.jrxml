@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="production" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.0  -->
+<!-- 2019-07-04T11:42:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transportation_order" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
 	<property name="TRYTON_RELATIONS" value="[&apos;shipments_out&apos;]"/>
 	<property name="ireport.zoom" value="1.210000000000001"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<style name="defecto" isDefault="true" forecolor="#000000" backcolor="#FFFFFF" fill="Solid" vAlign="Middle" markup="none" pattern="" isBlankWhenNull="true" fontName="SansSerif" fontSize="10" isPdfEmbedded="false"/>
 	<style name="textoscabecera" style="defecto" forecolor="#000000" backcolor="#CCFFCC" radius="10" fontName="SansSerif" isBold="true" isPdfEmbedded="false">
 		<pen lineWidth="1.0" lineColor="#FF0066"/>
@@ -61,7 +64,7 @@
 		<fieldDescription><![CDATA[shipments_out/customer/full_name]]></fieldDescription>
 	</field>
 	<field name="line_customer_address" class="java.lang.String">
-		<fieldDescription><![CDATA[shipments_out/customer/addresses/full_address_lang]]></fieldDescription>
+		<fieldDescription><![CDATA[shipments_out/delivery_address/full_address_lang]]></fieldDescription>
 	</field>
 	<field name="weight_lines" class="java.lang.Number">
 		<fieldDescription><![CDATA[shipments_out/weight_lines]]></fieldDescription>
