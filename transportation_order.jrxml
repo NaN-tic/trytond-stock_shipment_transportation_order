@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.0  -->
-<!-- 2019-07-04T11:42:18 -->
+<!-- 2019-07-08T10:50:14 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transportation_order" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
 	<property name="TRYTON_RELATIONS" value="[&apos;shipments_out&apos;]"/>
 	<property name="ireport.zoom" value="1.210000000000001"/>
@@ -131,34 +131,34 @@
 		<groupHeader>
 			<band height="145" splitType="Stretch">
 				<textField pattern="">
-					<reportElement style="textoscabecera" positionType="FixRelativeToBottom" x="486" y="125" width="50" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="9c59622b-4c00-464f-9a7b-b5518d2a02f1"/>
+					<reportElement style="textoscabecera" positionType="Float" x="486" y="125" width="50" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="9c59622b-4c00-464f-9a7b-b5518d2a02f1"/>
 					<textElement textAlignment="Right">
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Weight")]]></textFieldExpression>
 				</textField>
 				<textField pattern="">
-					<reportElement style="textoscabecera" positionType="FixRelativeToBottom" x="102" y="125" width="185" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="5db121b9-9481-43bc-95d1-b02a2397be40"/>
+					<reportElement style="textoscabecera" positionType="Float" x="102" y="125" width="245" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="5db121b9-9481-43bc-95d1-b02a2397be40"/>
 					<textElement>
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Customer and Address")]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement positionType="FixRelativeToBottom" x="-2" y="143" width="545" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3347a56b-f844-44c3-b891-a279dc3a08bf"/>
+					<reportElement positionType="Float" x="-2" y="143" width="545" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="3347a56b-f844-44c3-b891-a279dc3a08bf"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineColor="#000000"/>
 					</graphicElement>
 				</line>
 				<textField pattern="">
-					<reportElement style="textoscabecera" positionType="FixRelativeToBottom" x="1" y="125" width="85" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="6501202e-6f3e-4dcf-8725-9cf6077d92a4"/>
+					<reportElement style="textoscabecera" positionType="Float" x="1" y="125" width="85" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="6501202e-6f3e-4dcf-8725-9cf6077d92a4"/>
 					<textElement>
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Customer Code")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="345" y="39" width="157" height="15" backcolor="#FFFFFF" uuid="3a02438b-ebb4-4183-af4c-c38e5ddbeae9">
+					<reportElement style="defecto" positionType="Float" x="345" y="39" width="157" height="15" backcolor="#FFFFFF" uuid="3a02438b-ebb4-4183-af4c-c38e5ddbeae9">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
@@ -168,7 +168,7 @@
 					<textFieldExpression><![CDATA[new SimpleDateFormat("dd'-'MM'-'yyyy").format($F{order_date})]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="272" y="39" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="88eb9a5a-ce6f-4261-8209-b51a25174fef">
+					<reportElement style="defecto" positionType="Float" x="272" y="39" width="68" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="88eb9a5a-ce6f-4261-8209-b51a25174fef">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -179,7 +179,7 @@
 					<textFieldExpression><![CDATA[tr($V{L},"DATE")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="345" y="23" width="157" height="14" backcolor="#FFFFFF" uuid="f176fd23-0724-4242-822e-3a37a78d17c3">
+					<reportElement style="defecto" positionType="Float" x="345" y="23" width="157" height="14" backcolor="#FFFFFF" uuid="f176fd23-0724-4242-822e-3a37a78d17c3">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<textElement>
@@ -188,7 +188,7 @@
 					<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="272" y="23" width="68" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="237430d0-f644-4f59-b5c2-38287dbc9651">
+					<reportElement style="defecto" positionType="Float" x="272" y="23" width="68" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="237430d0-f644-4f59-b5c2-38287dbc9651">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<textElement>
@@ -197,28 +197,29 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Nº")]]></textFieldExpression>
 				</textField>
 				<textField pattern="">
-					<reportElement style="textoscabecera" positionType="FixRelativeToBottom" x="427" y="125" width="47" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="209f3bbf-69bd-475d-85f1-246aea93e916"/>
+					<reportElement style="textoscabecera" positionType="Float" x="424" y="125" width="50" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="209f3bbf-69bd-475d-85f1-246aea93e916"/>
 					<textElement textAlignment="Right">
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Packages")]]></textFieldExpression>
 				</textField>
 				<textField pattern="">
-					<reportElement style="textoscabecera" positionType="FixRelativeToBottom" x="357" y="125" width="63" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="970be501-325a-4656-8a7d-4abaed99e77d"/>
+					<reportElement style="textoscabecera" positionType="Float" x="357" y="125" width="63" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="970be501-325a-4656-8a7d-4abaed99e77d"/>
 					<textElement>
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Nº")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="3" y="74" width="233" height="15" backcolor="#FFFFFF" uuid="4f954bb2-b83b-4c75-ae86-00d417db9155"/>
+					<reportElement style="defecto" positionType="Float" x="0" y="74" width="236" height="15" backcolor="#FFFFFF" uuid="4f954bb2-b83b-4c75-ae86-00d417db9155"/>
+					<box leftPadding="3"/>
 					<textElement>
 						<font fontName="SansSerif" size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{incoterm}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="0" y="56" width="240" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="263d25ee-4a5b-43b3-b7ab-853fbe6681e8">
+					<reportElement style="defecto" positionType="Float" x="0" y="56" width="240" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="263d25ee-4a5b-43b3-b7ab-853fbe6681e8">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
@@ -228,16 +229,17 @@
 					<textFieldExpression><![CDATA[tr($V{L},"SHIPPING CONDITIONS") + ":"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="0" y="23" width="240" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="532580b5-7f5c-4147-bd3d-fff8176fbf8d"/>
+					<reportElement style="defecto" positionType="Float" x="0" y="23" width="240" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="532580b5-7f5c-4147-bd3d-fff8176fbf8d"/>
 					<textElement>
 						<font fontName="SansSerif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"CARRIER")+": "]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="3" y="39" width="230" height="14" backcolor="#FFFFFF" uuid="32df24ef-830f-44d6-a68b-75a8fc460cf1">
+					<reportElement style="defecto" positionType="Float" x="0" y="39" width="230" height="14" backcolor="#FFFFFF" uuid="32df24ef-830f-44d6-a68b-75a8fc460cf1">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
+					<box leftPadding="3"/>
 					<textElement>
 						<font fontName="SansSerif" size="10" isBold="false"/>
 					</textElement>
@@ -248,7 +250,7 @@
 		<groupFooter>
 			<band height="50">
 				<textField isStretchWithOverflow="true">
-					<reportElement style="defecto" positionType="FixRelativeToBottom" x="357" y="13" width="69" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="c6e32154-da46-45b1-ab56-d322ac2e4917">
+					<reportElement style="defecto" positionType="Float" x="357" y="13" width="69" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="c6e32154-da46-45b1-ab56-d322ac2e4917">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<textElement>
@@ -257,14 +259,14 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Total")]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="#,##0.0000;-#,##0.0000">
-					<reportElement style="line_name" positionType="FixRelativeToBottom" mode="Transparent" x="487" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="68e55f8a-1053-486a-b908-a8ba7d75f44f"/>
+					<reportElement style="line_name" positionType="Float" mode="Transparent" x="487" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="68e55f8a-1053-486a-b908-a8ba7d75f44f"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{total_weight}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="line_name" positionType="FixRelativeToBottom" mode="Opaque" x="425" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="46503432-f404-47c7-bb0e-d9e29c898dc7"/>
+					<reportElement style="line_name" positionType="Float" mode="Opaque" x="425" y="13" width="50" height="15" backcolor="#FFFFFF" uuid="46503432-f404-47c7-bb0e-d9e29c898dc7"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="9"/>
 					</textElement>
@@ -276,7 +278,7 @@
 	<pageHeader>
 		<band height="69">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="163" y="28" width="240" height="15" isRemoveLineWhenBlank="true" forecolor="#010101" uuid="19f1bce6-aa1f-43e6-b202-d0dba7338f27">
+				<reportElement positionType="Float" x="163" y="28" width="240" height="15" isRemoveLineWhenBlank="true" forecolor="#010101" uuid="19f1bce6-aa1f-43e6-b202-d0dba7338f27">
 					<printWhenExpression><![CDATA[$F{number} != null && $F{number} != ""]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center">
@@ -285,21 +287,21 @@
 				<textFieldExpression><![CDATA[tr($V{L}, "TRANSPORTATION ORDER")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="513" y="48" width="14" height="16" uuid="2e24cbd9-e721-4750-82f9-bfa244c1218e"/>
+				<reportElement positionType="Float" x="513" y="48" width="14" height="16" uuid="2e24cbd9-e721-4750-82f9-bfa244c1218e"/>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" / "]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="530" y="48" width="14" height="16" uuid="282031ae-90f8-42e0-adc0-2fc2ca1459a1"/>
+				<reportElement positionType="Float" x="530" y="48" width="14" height="16" uuid="282031ae-90f8-42e0-adc0-2fc2ca1459a1"/>
 				<textElement textAlignment="Left">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA["" +$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="0" y="0" width="162" height="69" isRemoveLineWhenBlank="true" uuid="fd95a5eb-9907-433e-bbfb-b5b5ff239b98">
+				<reportElement positionType="Float" x="0" y="0" width="162" height="69" isRemoveLineWhenBlank="true" uuid="fd95a5eb-9907-433e-bbfb-b5b5ff239b98">
 					<printWhenExpression><![CDATA[$F{logo}.length()>0]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$F{logo}]]></imageExpression>
@@ -309,7 +311,7 @@
 	<detail>
 		<band height="22">
 			<textField pattern="#,##0.0000;-#,##0.0000" isBlankWhenNull="false">
-				<reportElement x="490" y="3" width="47" height="15" uuid="c11b6243-7aec-4fe4-9eba-6c9303dec9cd"/>
+				<reportElement positionType="Float" x="486" y="3" width="50" height="15" uuid="c11b6243-7aec-4fe4-9eba-6c9303dec9cd"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
@@ -324,28 +326,28 @@
         "0.00"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="line_name" x="3" y="3" width="84" height="15" uuid="b090b6d9-64bd-4c68-a29b-fc14819ee688"/>
+				<reportElement style="line_name" positionType="Float" x="1" y="3" width="85" height="15" uuid="b090b6d9-64bd-4c68-a29b-fc14819ee688"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line_customer_code}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="line_name" x="424" y="3" width="50" height="15" uuid="c100cdbb-9555-453b-a63b-76a1c6836fdd"/>
+				<reportElement style="line_name" positionType="Float" x="424" y="3" width="50" height="15" uuid="c100cdbb-9555-453b-a63b-76a1c6836fdd"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line_packages}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="line_name" x="356" y="3" width="64" height="15" uuid="31b66cfa-4cbd-474d-8733-01dc9cb7c479"/>
+				<reportElement style="line_name" positionType="Float" x="356" y="3" width="64" height="15" uuid="31b66cfa-4cbd-474d-8733-01dc9cb7c479"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line_number}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="103" y="3" width="244" height="15" uuid="190dc292-8d66-4c2d-b2fc-5d5a484eb02e"/>
+				<reportElement positionType="Float" x="103" y="3" width="244" height="15" uuid="190dc292-8d66-4c2d-b2fc-5d5a484eb02e"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="2" rightPadding="0">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
