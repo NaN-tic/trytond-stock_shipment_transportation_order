@@ -19,6 +19,8 @@ _DEPENDS = ['state']
 class TransportOrder(Workflow, ModelSQL, ModelView):
     'Transportation Order'
     __name__ = 'stock.transportation_order'
+    _rec_name = 'number'
+
     number = fields.Char('Number', readonly=True)
     carrier = fields.Many2One('carrier', 'Carrier', required=True,
         states={
@@ -75,6 +77,10 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
                     },
                 })
 
+    @staticmethod
+    def default_order_date():
+        Date = Pool().get('ir.date')
+        return Date.today()
 
     @staticmethod
     def default_company():
