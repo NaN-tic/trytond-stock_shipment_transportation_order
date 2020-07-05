@@ -10,7 +10,7 @@ from trytond.tests.test_tryton import suite as test_suite
 
 class TransportOrderTestCase(ModuleTestCase):
     'Test Stock Shipment Transportation Order module'
-    module = 'stock.transportation_order'
+    module = 'stock_shipment_transportation_order'
 
 
 def suite():

@@ -109,6 +109,25 @@
           <field name="perm_delete" eval="True"/>
       </record>
 
+      <record model="ir.model.button" id="transportation_order_done_button">
+          <field name="name">done</field>
+          <field name="string">Done</field>
+          <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+      </record>
+      <record model="ir.model.button-res.group" id="transportation_order_done_button_group_stock">
+          <field name="button" ref="transportation_order_done_button"/>
+          <field name="group" ref="stock.group_stock"/>
+      </record>
+      <record model="ir.model.button" id="transportation_order_draft_button">
+          <field name="name">draft</field>
+          <field name="string">Draft</field>
+          <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+      </record>
+      <record model="ir.model.button-res.group" id="transportation_order_draft_button_group_stock">
+          <field name="button" ref="transportation_order_draft_button"/>
+          <field name="group" ref="stock.group_stock"/>
+      </record>
+
       <record model="ir.ui.view" id="shipment_out_view_tree">
           <field name="model">stock.shipment.out</field>
           <field name="name">shipment_out_tree</field>
