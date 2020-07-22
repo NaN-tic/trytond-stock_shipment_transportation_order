@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.0  -->
-<!-- 2019-07-08T10:50:14 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transportation_order" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="10" bottomMargin="10" uuid="391f1574-381e-44ba-9612-55c216f55442">
 	<property name="TRYTON_RELATIONS" value="[&apos;shipments_out&apos;]"/>
-	<property name="ireport.zoom" value="1.210000000000001"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.9487171000000025"/>
+	<property name="ireport.x" value="35"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<style name="defecto" isDefault="true" forecolor="#000000" backcolor="#FFFFFF" fill="Solid" vAlign="Middle" markup="none" pattern="" isBlankWhenNull="true" fontName="SansSerif" fontSize="10" isPdfEmbedded="false"/>
@@ -124,7 +122,7 @@
     ?
         $F{weight_lines}
     :
-        "0.00"]]></variableExpression>
+        0.00]]></variableExpression>
 	</variable>
 	<group name="order" isResetPageNumber="true" isReprintHeaderOnEachPage="true" footerPosition="StackAtBottom">
 		<groupExpression><![CDATA[$F{id}]]></groupExpression>
