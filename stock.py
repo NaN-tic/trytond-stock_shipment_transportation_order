@@ -3,7 +3,7 @@
 from decimal import Decimal
 from trytond.model import ModelView, ModelSQL, fields, Workflow
 from trytond.pool import PoolMeta, Pool
-from trytond.pyson import Eval, If, Bool
+from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.modules.jasper_reports.jasper import JasperReport
 
@@ -116,9 +116,6 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
         pass
 
     def get_total_weight(self, name):
-        pool = Pool()
-        Uom = pool.get('product.uom')
-
         total = Decimal(0)
         for shipment in self.shipments_out:
             if not hasattr(shipment, 'weight_lines'):
