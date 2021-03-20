@@ -1,22 +1,26 @@
 # This file is part of Tryton.  The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
 from trytond.model import fields
-from trytond.pyson import Eval
+from trytond.pyson import Eval, Id
 from trytond.pool import PoolMeta, Pool
 from trytond.modules.stock.configuration import default_func
 
-__all__ = ['Configuration', 'ConfigurationSequence']
+transportation_order_sequence_field = fields.Many2One(
+    'ir.sequence', "Transportation Order Sequence", required=True,
+    domain=[
+        ('company', 'in',
+            [Eval('context', {}).get('company', -1), None]),
+        ('sequence_type', Id('stock_shipment_transportation_order',
+                'sequence_type_transportation_order')),
+        ('code', '=', 'stock.transportation_order'),
+        ],
+    help="Used to generate the number given to transportation orders.")
+
 
 class Configuration(metaclass=PoolMeta):
     __name__ = 'stock.configuration'
-    transportation_order_sequence = fields.MultiValue(fields.Many2One(
-            'ir.sequence', "Transportation Order Sequence", required=True,
-            domain=[
-                ('company', 'in',
-                    [Eval('context', {}).get('company', -1), None]),
-                ('code', '=', 'stock.transportation_order'),
-                ],
-            help="Used to generate the number given to transportation orders."))
+    transportation_order_sequence = fields.MultiValue(
+        transportation_order_sequence_field)
 
     @classmethod
     def multivalue_model(cls, field):
@@ -30,13 +34,7 @@ class Configuration(metaclass=PoolMeta):
 
 class ConfigurationSequence(metaclass=PoolMeta):
     __name__ = 'stock.configuration.sequence'
-    transportation_order_sequence = fields.Many2One(
-            'ir.sequence', "Transportation Order Sequence", required=True,
-            domain=[
-                ('company', 'in', [Eval('company', -1), None]),
-                ('code', '=', 'stock.transportation_order'),
-                ],
-            depends=['company'])
+    transportation_order_sequence = transportation_order_sequence_field
 
     @classmethod
     def default_transportation_order_sequence(cls):

@@ -7,14 +7,11 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.modules.jasper_reports.jasper import JasperReport
 
-
-__all__ = ['TransportOrder', 'StockShipmentOut',
-            'TransportOrderReport']
-
 _STATES = {
     'readonly': Eval('state') != 'draft',
 }
 _DEPENDS = ['state']
+
 
 class TransportOrder(Workflow, ModelSQL, ModelView):
     'Transportation Order'
@@ -88,7 +85,6 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
     def set_number(cls, transportation_orders):
         'Fill the number field with the transportation orders sequence'
         pool = Pool()
-        Sequence = pool.get('ir.sequence')
         Config = pool.get('stock.configuration')
 
         config = Config(1)
@@ -96,7 +92,7 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
         for order in transportation_orders:
             if order.number or not config.transportation_order_sequence:
                 continue
-            number = Sequence.get_id(config.transportation_order_sequence.id)
+            number = config.transportation_order_sequence.get()
             to_write.extend(([order], {
                         'number': number,
                         }))

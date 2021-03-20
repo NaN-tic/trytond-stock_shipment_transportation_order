@@ -13,7 +13,6 @@ this repository contains the full copyright notices and license terms. -->
       <!-- sequence -->
       <record model="ir.sequence.type" id="sequence_type_transportation_order">
           <field name="name">Transportation Order</field>
-          <field name="code">stock.transportation_order</field>
       </record>
       <record model="ir.sequence.type-res.group"
           id="sequence_type_transportation_order_group_admin">
@@ -27,7 +26,7 @@ this repository contains the full copyright notices and license terms. -->
       </record>
       <record model="ir.sequence" id="sequence_transportation_order">
           <field name="name">Transportation Order</field>
-          <field name="code">stock.transportation_order</field>
+          <field name="sequence_type" ref="sequence_type_transportation_order"/>
       </record>
     </data>
 </tryton>
