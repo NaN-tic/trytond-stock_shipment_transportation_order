@@ -10,9 +10,8 @@ transportation_order_sequence_field = fields.Many2One(
     domain=[
         ('company', 'in',
             [Eval('context', {}).get('company', -1), None]),
-        ('sequence_type', Id('stock_shipment_transportation_order',
+        ('sequence_type', '=', Id('stock_shipment_transportation_order',
                 'sequence_type_transportation_order')),
-        ('code', '=', 'stock.transportation_order'),
         ],
     help="Used to generate the number given to transportation orders.")
 
