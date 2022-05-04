@@ -139,5 +139,17 @@
           <field name="inherit" ref="stock.shipment_out_view_form"/>
       </record>
 
+      <record model="ir.rule.group" id="rule_group_stock_transportation_order">
+            <field name="name">User in company</field>
+            <field name="model" search="[('model', '=', 'stock.transportation_order')]"/>
+            <field name="global_p" eval="True"/>
+      </record>
+      <record model="ir.rule" id="rule_stock_transportation_order1">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_stock_transportation_order"/>
+      </record>
+
     </data>
 </tryton>
