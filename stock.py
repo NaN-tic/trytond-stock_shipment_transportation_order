@@ -43,7 +43,7 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
-        ], 'State', required=True, readonly=True, select=True)
+        ], 'State', required=True, readonly=True)
     total_packages = fields.Function(fields.Integer('Total of Packages'),
         'get_total_packages')
     total_weight = fields.Function(fields.Numeric('Total Weight', digits=(16, 4)),
