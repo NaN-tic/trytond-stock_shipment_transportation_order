@@ -25,7 +25,7 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
             'readonly': Eval('state') != 'draft',
         },
         depends=_DEPENDS)
-    incoterm = fields.Many2One('incoterm', 'Incoterm',
+    incoterm = fields.Many2One('incoterm.incoterm', 'Incoterm',
         states={
             'required': Eval('state') == 'done',
             'readonly': Eval('state') != 'draft',
