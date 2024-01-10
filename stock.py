@@ -23,23 +23,20 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
         states={
             'required': Eval('state') == 'done',
             'readonly': Eval('state') != 'draft',
-        },
-        depends=_DEPENDS)
+        })
     incoterm = fields.Many2One('incoterm.incoterm', 'Incoterm',
         states={
             'required': Eval('state') == 'done',
             'readonly': Eval('state') != 'draft',
-        },
-        depends=_DEPENDS)
+        })
     order_date = fields.Date('Date',
         states={
             'required': Eval('state') == 'done',
             'readonly': Eval('state') != 'draft',
-        },
-        depends=_DEPENDS)
+        })
     company = fields.Many2One('company.company', 'Company', required=True)
     shipments_out = fields.One2Many('stock.shipment.out', 'transportation_order',
-        'Customer Shipments', states=_STATES, depends=_DEPENDS)
+        'Customer Shipments', states=_STATES)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
