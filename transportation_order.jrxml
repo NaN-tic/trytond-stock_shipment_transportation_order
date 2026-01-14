@@ -62,7 +62,7 @@
 		<fieldDescription><![CDATA[shipments_out/customer/full_name]]></fieldDescription>
 	</field>
 	<field name="line_customer_address" class="java.lang.String">
-		<fieldDescription><![CDATA[shipments_out/delivery_address/full_address_lang]]></fieldDescription>
+		<fieldDescription><![CDATA[shipments_out/delivery_address/full_address]]></fieldDescription>
 	</field>
 	<field name="weight_lines" class="java.lang.Number">
 		<fieldDescription><![CDATA[shipments_out/weight_lines]]></fieldDescription>
