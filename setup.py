@@ -10,7 +10,7 @@ from configparser import ConfigParser
 MODULE = 'stock_shipment_transportation_order'
 PREFIX = 'nantic'
 MODULE2PREFIX = {
-    'jasper_reports': 'nantic',
+    'html_report': 'nantic',
 }
 
 
