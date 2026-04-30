@@ -168,3 +168,39 @@ msgstr "Esborrany"
 msgctxt "view:stock.configuration:"
 msgid "Transportation Order"
 msgstr "Ordre de transport"
+
+msgctxt "html_report:h:"
+msgid "TRANSPORTATION ORDER"
+msgstr "ORDRE DE TRANSPORT"
+
+msgctxt "html_report:h:"
+msgid "Customer Code"
+msgstr "Cod. client"
+
+msgctxt "html_report:h:"
+msgid "Customer and Address"
+msgstr "Client i adreca"
+
+msgctxt "html_report:h:"
+msgid "DATE"
+msgstr "DATA"
+
+msgctxt "html_report:h:"
+msgid "Nº"
+msgstr "Nº"
+
+msgctxt "html_report:h:"
+msgid "Packages"
+msgstr "Paquets"
+
+msgctxt "html_report:h:"
+msgid "SHIPPING CONDITIONS"
+msgstr "CONDICIONS ENVIAMENT"
+
+msgctxt "html_report:h:"
+msgid "Total"
+msgstr "Total"
+
+msgctxt "html_report:h:"
+msgid "Weight"
+msgstr "Pes"
