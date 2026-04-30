@@ -70,7 +70,7 @@
             <field name="report_name">stock.transportation_order.jreport</field>
             <field name="report">stock_shipment_transportation_order/transportation_order.jrxml</field>
             <field name="extension">pdf</field>
-            <field name="template_extension">jrxml</field>
+            <field name="template_extension">html</field>
         </record>
         <record model="ir.action.keyword" id="report_transportation_order_keyword">
             <field name="keyword">form_print</field>
