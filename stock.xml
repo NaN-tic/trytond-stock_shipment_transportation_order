@@ -68,7 +68,6 @@
             <field name="name">Transportation Order</field>
             <field name="model">stock.transportation_order</field>
             <field name="report_name">stock.transportation_order.jreport</field>
-            <field name="report">stock_shipment_transportation_order/transportation_order.jrxml</field>
             <field name="extension">pdf</field>
             <field name="template_extension">html</field>
         </record>
