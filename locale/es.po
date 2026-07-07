@@ -169,38 +169,38 @@ msgctxt "view:stock.configuration:"
 msgid "Transportation Order"
 msgstr "Orden de transporte"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "TRANSPORTATION ORDER"
 msgstr "ORDEN DE TRANSPORTE"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Customer Code"
 msgstr "Código cliente"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Customer and Address"
 msgstr "Cliente y dirección"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "DATE"
 msgstr "FECHA"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Nº"
 msgstr "Nº"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Packages"
 msgstr "Paquetes"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "SHIPPING CONDITIONS"
 msgstr "CONDICIONES ENVÍO"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Total"
 msgstr "Total"
 
-msgctxt "html_report:h:"
+msgctxt "xgettext:x:"
 msgid "Weight"
 msgstr "Peso"
