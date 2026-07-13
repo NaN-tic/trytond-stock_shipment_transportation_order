@@ -10,6 +10,7 @@ def register():
         configuration.Configuration,
         configuration.ConfigurationSequence,
         stock.TransportOrder,
+        stock.StockMove,
         stock.StockShipmentOut,
         module='stock_shipment_transportation_order', type_='model')
     Pool.register(

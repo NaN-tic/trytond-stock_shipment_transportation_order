@@ -14,6 +14,10 @@ msgctxt "field:stock.shipment.out,transportation_order:"
 msgid "Transportation Order"
 msgstr "Ordre de transport"
 
+msgctxt "field:stock.move,transportation_order:"
+msgid "Transportation Order"
+msgstr "Ordre de transport"
+
 msgctxt "field:stock.transportation_order,carrier:"
 msgid "Carrier"
 msgstr "Transportista"
@@ -46,9 +50,17 @@ msgctxt "field:stock.transportation_order,order_date:"
 msgid "Date"
 msgstr "Data"
 
+msgctxt "field:stock.transportation_order,party_summary:"
+msgid "Party Summary"
+msgstr "Resum de tercers"
+
 msgctxt "field:stock.transportation_order,rec_name:"
 msgid "Record Name"
 msgstr "Nom registre"
+
+msgctxt "field:stock.transportation_order,supplier_moves:"
+msgid "Supplier Moves"
+msgstr "Moviments de proveidor"
 
 msgctxt "field:stock.transportation_order,shipments_out:"
 msgid "Customer Shipments"
@@ -82,6 +94,10 @@ msgctxt "model:ir.action,name:act_transportation_order"
 msgid "Transportation Orders"
 msgstr "Ordres de transport"
 
+msgctxt "model:ir.action,name:act_transportation_order_calendar"
+msgid "Transportation Calendar"
+msgstr "Calendari de transports"
+
 msgctxt "model:ir.action,name:transportation_order_report_action"
 msgid "Transportation Order"
 msgstr "Ordre de transport"
@@ -113,6 +129,10 @@ msgctxt "model:ir.ui.menu,name:menu_transportation_order"
 msgid "Transportation Orders"
 msgstr "Ordres de transport"
 
+msgctxt "model:ir.ui.menu,name:menu_transportation_order_calendar"
+msgid "Transportation Calendar"
+msgstr "Calendari de transports"
+
 msgctxt "model:stock.transportation_order,name:"
 msgid "Transportation Order"
 msgstr "Ordre de transport"
@@ -128,6 +148,18 @@ msgstr "Cod. client"
 msgctxt "report:stock.transportation_order.jreport:"
 msgid "Customer and Address"
 msgstr "Cliente y Dirección"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Supplier"
+msgstr "Proveidor"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "report:stock.transportation_order.jreport:"
+msgid "Quantity"
+msgstr "Quantitat"
 
 msgctxt "report:stock.transportation_order.jreport:"
 msgid "DATE"
@@ -168,6 +200,14 @@ msgstr "Esborrany"
 msgctxt "view:stock.configuration:"
 msgid "Transportation Order"
 msgstr "Ordre de transport"
+
+msgctxt "view:stock.transportation_order:"
+msgid "Customer Shipments"
+msgstr "Albarans de client"
+
+msgctxt "view:stock.transportation_order:"
+msgid "Supplier Moves"
+msgstr "Moviments de proveidor"
 
 msgctxt "html_report:h:"
 msgid "TRANSPORTATION ORDER"

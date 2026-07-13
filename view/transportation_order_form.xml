@@ -7,11 +7,19 @@ this repository contains the full copyright notices and license terms. -->
     <label name="carrier"/>
     <field name="carrier"/>
     <newline/>
-    <label name="incoterm"/>
-    <field name="incoterm"/>
     <label name="order_date"/>
     <field name="order_date"/>
-    <field name="shipments_out" colspan="4" widget="many2many"/>
+    <label name="party_summary"/>
+    <field name="party_summary"/>
+    <newline/>
+    <notebook colspan="6">
+        <page string="Customer Shipments" id="customer_shipments">
+            <field name="shipments_out" colspan="6" widget="many2many"/>
+        </page>
+        <page string="Supplier Moves" id="supplier_moves">
+            <field name="supplier_moves" colspan="6" widget="many2many"/>
+        </page>
+    </notebook>
     <group col="4" colspan="4" id="group_buttons">
         <label name="state"/>
         <field name="state"/>
