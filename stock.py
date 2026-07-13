@@ -8,13 +8,12 @@ from trytond.pool import PoolMeta, Pool
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.modules.html_report.dominate_report import DominateReport
-from trytond.modules.html_report.i18n import _
+from trytond.modules.xgettext import _
 
 _STATES = {
     'readonly': Eval('state') != 'draft',
 }
 _DEPENDS = ['state']
-
 
 class TransportOrder(Workflow, ModelSQL, ModelView):
     'Transportation Order'
@@ -155,12 +154,10 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
                 packages += shipment.number_packages
         return packages
 
-
 class StockShipmentOut(metaclass=PoolMeta):
     __name__ = 'stock.shipment.out'
     transportation_order = fields.Many2One('stock.transportation_order',
         'Transportation Order')
-
 
 class StockMove(metaclass=PoolMeta):
     __name__ = 'stock.move'
