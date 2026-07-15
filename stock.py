@@ -1,4 +1,3 @@
-
 # This file is part of Tryton.  The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
 from decimal import Decimal
@@ -27,11 +26,6 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
             'required': Eval('state') == 'done',
             'readonly': Eval('state') != 'draft',
         })
-    incoterm = fields.Many2One('incoterm.incoterm', 'Incoterm',
-        states={
-            'required': Eval('state') == 'done',
-            'readonly': Eval('state') != 'draft',
-        })
     order_date = fields.Date('Date',
         states={
             'required': Eval('state') == 'done',
@@ -40,6 +34,12 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
     company = fields.Many2One('company.company', 'Company', required=True)
     shipments_out = fields.One2Many('stock.shipment.out', 'transportation_order',
         'Customer Shipments', states=_STATES)
+    supplier_moves = fields.One2Many('stock.move', 'transportation_order',
+        'Supplier Moves', domain=[
+            ('shipment', 'ilike', 'stock.shipment.in,%'),
+            ], states=_STATES)
+    party_summary = fields.Function(fields.Char('Party Summary'),
+        'get_party_summary')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
@@ -84,9 +84,27 @@ class TransportOrder(Workflow, ModelSQL, ModelView):
         items = []
         if self.number:
             items.append(self.number)
+        else:
+            party_summary = self.get_party_summary(name)
+            if party_summary:
+                items.append(party_summary)
+            if self.order_date:
+                items.append(str(self.order_date))
         if not items:
             items.append('(%s)' % self.id)
         return ' '.join(items)
+
+    def get_party_summary(self, name):
+        parties = {
+            shipment.customer.rec_name
+            for shipment in self.shipments_out
+            if shipment.customer
+            }
+        parties.update(
+            move.shipment.supplier.rec_name
+            for move in self.supplier_moves
+            if move.shipment and move.shipment.supplier)
+        return ', '.join(sorted(parties))
 
     @classmethod
     def set_number(cls, transportation_orders):
@@ -141,6 +159,12 @@ class StockShipmentOut(metaclass=PoolMeta):
     transportation_order = fields.Many2One('stock.transportation_order',
         'Transportation Order')
 
+class StockMove(metaclass=PoolMeta):
+    __name__ = 'stock.move'
+    transportation_order = fields.Many2One('stock.transportation_order',
+        'Transportation Order')
+
+
 class TransportOrderReport(DominateReport):
     __name__ = 'stock.transportation_order.jreport'
     _single = True
@@ -186,16 +210,32 @@ class TransportOrderReport(DominateReport):
                         td(_('DATE'), cls='thick no-wrap', style='width: 10%;')
                         td(record.render.order_date if record.raw.order_date else '',
                             style='width: 15%;')
-                    with tr():
-                        td('%s:' % _('SHIPPING CONDITIONS'),
-                            cls='thick no-wrap')
-                        td(record.incoterm.render.name if record.raw.incoterm else '',
-                            colspan='5')
         return header
 
     @classmethod
     def body(cls, action, data, records):
         record, = records
+        if record.supplier_moves and not record.shipments_out:
+            body = div()
+            with body:
+                lines_table = table()
+                with lines_table:
+                    with thead():
+                        with tr(cls='table-header'):
+                            th(_('Supplier'), cls='text-left')
+                            th(_('Product'), cls='text-left')
+                            th(_('Quantity'), cls='text-right')
+                    with tbody():
+                        for move in record.supplier_moves:
+                            with tr():
+                                td(move.shipment.supplier.render.rec_name
+                                    if (move.raw.shipment
+                                        and move.shipment.raw.supplier) else '')
+                                td(move.product.render.rec_name
+                                    if move.raw.product else '')
+                                td(move.render.quantity, cls='text-right')
+            return body
+
         show_packages = any(
             hasattr(shipment.raw, 'number_packages')
             for shipment in record.shipments_out)

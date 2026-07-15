@@ -14,11 +14,20 @@
             <field name="type">tree</field>
             <field name="name">transportation_order_tree</field>
         </record>
+        <record model="ir.ui.view" id="transportation_order_view_calendar">
+            <field name="model">stock.transportation_order</field>
+            <field name="type">calendar</field>
+            <field name="name">transportation_order_calendar</field>
+        </record>
 
         <record model="ir.action.act_window" id="act_transportation_order">
             <field name="name">Transportation Orders</field>
             <field name="res_model">stock.transportation_order</field>
             <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window" id="act_transportation_order_calendar">
+            <field name="name">Transportation Calendar</field>
+            <field name="res_model">stock.transportation_order</field>
         </record>
 
         <record model="ir.action.act_window.view" id="act_transportation_order_view1">
@@ -30,6 +39,16 @@
             <field name="sequence" eval="20"/>
             <field name="view" ref="transportation_order_view_form"/>
             <field name="act_window" ref="act_transportation_order"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_transportation_order_view3">
+            <field name="sequence" eval="30"/>
+            <field name="view" ref="transportation_order_view_calendar"/>
+            <field name="act_window" ref="act_transportation_order"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_transportation_order_calendar_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="transportation_order_view_calendar"/>
+            <field name="act_window" ref="act_transportation_order_calendar"/>
         </record>
 
         <record model="ir.action.act_window.domain" id="act_transportation_order_domain_draft">
@@ -57,6 +76,9 @@
         <!-- menu -->
         <menuitem parent="stock.menu_stock" sequence="99" id="menu_transportation_order"
             action="act_transportation_order"/>
+        <menuitem parent="menu_transportation_order" sequence="10"
+            id="menu_transportation_order_calendar"
+            action="act_transportation_order_calendar"/>
 
         <record model="ir.ui.menu-res.group" id="menu_transportation_order_group_stock">
             <field name="menu" ref="menu_transportation_order"/>
@@ -129,6 +151,16 @@
             <field name="model">stock.shipment.out</field>
             <field name="name">shipment_out_form</field>
             <field name="inherit" ref="stock.shipment_out_view_form"/>
+        </record>
+        <record model="ir.ui.view" id="move_view_tree">
+            <field name="model">stock.move</field>
+            <field name="name">move_tree</field>
+            <field name="inherit" ref="stock.move_view_tree"/>
+        </record>
+        <record model="ir.ui.view" id="move_view_form">
+            <field name="model">stock.move</field>
+            <field name="name">move_form</field>
+            <field name="inherit" ref="stock.move_view_form"/>
         </record>
 
         <record model="ir.rule.group" id="rule_group_stock_transportation_order">
