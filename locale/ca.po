@@ -38,10 +38,6 @@ msgctxt "field:stock.transportation_order,id:"
 msgid "ID"
 msgstr "ID"
 
-msgctxt "field:stock.transportation_order,incoterm:"
-msgid "Incoterm"
-msgstr "Incoterm"
-
 msgctxt "field:stock.transportation_order,number:"
 msgid "Number"
 msgstr "Número"
